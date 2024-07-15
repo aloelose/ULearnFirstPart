@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConvertingStringToNumber
+{
+    internal class ConvertingStringToNumber
+    {
+        public static void Main()
+        {
+            string doubleNumber = "894376.243643";
+            double number = Convert.ToDouble(doubleNumber);
+            Console.WriteLine(number + 1);
+        }
+    }
+}
