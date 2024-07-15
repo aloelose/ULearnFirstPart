@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exp11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите часы: ");
+            double hour = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите часы: ");
+            double minute = double.Parse(Console.ReadLine());
+
+            double minuteArrow = (minute / 60.0) * 360;
+            double hourArrow;
+
+            if (hour < 12)
+            {
+                hourArrow = hour * 30 + minuteArrow / 12;
+            }
+            else
+            {
+                hourArrow = (hour - 12) * 30 + minuteArrow / 12;
+            }
+
+            Console.WriteLine(Math.Abs(minuteArrow - hourArrow));
+        }
+    }
+}
