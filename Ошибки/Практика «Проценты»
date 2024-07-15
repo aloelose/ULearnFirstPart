@@ -1,0 +1,13 @@
+ public static double Calculate(string userInput)
+ {
+     var inputArray = userInput.Split(' ');
+     var deposit = double.Parse(inputArray[0]);
+     var interestRate = double.Parse(inputArray[1]);
+     var depositPeriod = double.Parse(inputArray[2]);
+     for (int i = 1; i < depositPeriod + 1; i++)
+     {
+         deposit += deposit * (interestRate / 12)/100;
+     }
+
+     return deposit;
+ }
