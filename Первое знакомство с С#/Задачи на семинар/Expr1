@@ -1,0 +1,15 @@
+internal class Program
+{
+   
+    public static void Main()
+    {
+        int a = 1;
+        int b = 2;
+        a += b;
+        b = a - b;
+        a = a - b;
+        Console.WriteLine($"{a}{b}");
+    }
+
+
+}
