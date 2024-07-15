@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var userInput = Console.ReadLine().Split(' ');
+            var a = double.Parse(userInput[0]);
+            var r = double.Parse(userInput[1]);
+
+            if (r > a / 2)
+            {
+                var alpha = Math.Atan2(Math.Sqrt(r * r - a * a / 4), a / 2);
+                var beta = Math.PI / 2 - 2 * alpha;
+                var squareTriangle = a / 2 * Math.Sqrt((r * r) - (a * a / 4));
+                var squareSector = beta / 2 * r * r;
+
+                var result = Math.Round((squareSector + squareTriangle) * 4, 3);
+                Console.WriteLine(result);
+            }
+            else if (r <= a / 2)
+            {
+                var result = Math.Round(Math.PI * Math.Pow(r, 2), 3);
+                Console.WriteLine(result);
+            }
+            
+
+        }
+    }
+}
