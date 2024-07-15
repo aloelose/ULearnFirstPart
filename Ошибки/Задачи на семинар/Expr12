@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exp12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var userInput = Console.ReadLine().Split(' ');
+            var h = double.Parse(userInput[0]);
+            var t = double.Parse(userInput[1]);
+            var v = double.Parse(userInput[2]);
+            var x = double.Parse(userInput[3]);
+
+            var tMax = t;
+            var tMin = Math.Abs((h - x * t) / (v - x));
+            Console.WriteLine($"{tMin} {tMax}");
+
+
+        }
+    }
+}
