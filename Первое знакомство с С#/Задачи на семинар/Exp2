@@ -1,0 +1,16 @@
+internal class Program
+{
+   
+    public static void Main()
+    {
+        int number = 123;
+        int firstNumeral = number / 100;
+        int secondNumeral = (number % 100)/10;
+        int thirdNumeral = number % 10;
+        int result = int.Parse((thirdNumeral.ToString() + secondNumeral.ToString() + firstNumeral.ToString()));
+
+        Console.WriteLine(result);
+    }
+
+
+}
