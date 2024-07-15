@@ -1,0 +1,22 @@
+using System;
+
+internal class Program
+{
+   
+    public static void Main()
+    {
+        int x0 = 2;
+        int y0 = 2;
+        int x1 = 4;
+        int y1 = 4;
+        int x2 = 4;
+        int y2 = 2;
+
+        Console.WriteLine(GetDistance(x0, y0, x1, y1, x2, y2));
+    }
+    private static double GetDistance(int x0,  int y0, int x1, int y1, int x2, int y2)
+    {
+        return Math.Abs((y2 - y1)*x0 - (x2 - x1)*y0 + x2*y1 - y2*x1)/
+            Math.Sqrt(Math.Pow((y2 - y1), 2) + Math.Pow((x2 - x1), 2));
+    }
+}
