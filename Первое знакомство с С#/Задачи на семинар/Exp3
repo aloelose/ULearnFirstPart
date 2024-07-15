@@ -1,0 +1,29 @@
+using System;
+
+internal class Program
+{
+   
+    public static void Main()
+    {
+        int time = 24;
+
+        if (time <= 6)
+        {
+            Console.WriteLine(time * 30);
+        }
+        else if (12 >= time & time > 6)
+        {
+            Console.WriteLine(180 - ((time - 6) * 30));
+        }
+        else if (18 >= time & time > 12)
+        {
+            Console.WriteLine((time - 12) * 30);
+        }
+        else
+        {
+            Console.WriteLine(180 - ((time - 18) * 30));
+        }
+    }
+
+
+}
