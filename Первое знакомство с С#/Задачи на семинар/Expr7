@@ -1,0 +1,21 @@
+using System;
+
+internal class Program
+{
+   
+    public static void Main()
+    {
+
+        Console.WriteLine(GetParalelVector(3, 2, -10));
+        Console.WriteLine(GetPerpendicularVector(3, 2, -10));
+    }
+    private static string GetParalelVector(int a,  int b, int c)
+    {
+        return $"Параллельный вектор({b},{-a})";
+        
+    }
+    private static string GetPerpendicularVector(int a, int b, int c)
+    {
+        return $"Перпендикулярный вектор({-b},{a})";
+    }
+}
