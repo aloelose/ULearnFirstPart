@@ -1,0 +1,15 @@
+using System;
+
+internal class Program
+{
+   
+    public static void Main()
+    {
+
+        Console.WriteLine(GetViscoseYear(1800, 2005));
+    }
+    private static double GetViscoseYear(int startYear,  int endYear)
+    {
+        return ((endYear / 4) - (endYear / 100) + (endYear / 400)) - ((startYear / 4) - (startYear / 100) + (startYear / 400));
+    }
+}
