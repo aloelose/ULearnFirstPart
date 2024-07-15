@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
+{
+    internal class ConsoleApp
+    {
+        public static void Main()
+        {
+            Console.WriteLine(GetMinX(1, 2, 3));
+            Console.WriteLine(GetMinX(0, 3, 2));
+            Console.WriteLine(GetMinX(1, -2, -3));
+            Console.WriteLine(GetMinX(5, 2, 1));
+            Console.WriteLine(GetMinX(4, 3, 2));
+            Console.WriteLine(GetMinX(0, 4, 5));
+
+            // А в этих случаях решение существует:
+            Console.WriteLine(GetMinX(0, 0, 2) != "Impossible");
+            Console.WriteLine(GetMinX(0, 0, 0) != "Impossible");
+        }
+        public static string GetMinX(double a, double b, double c)
+        {
+            if (a == 0 && b != 0)
+            {
+                // Функция линейная, минимума не существует
+                return "Impossible";
+            }
+            else if (a == b && b == 0)
+            {
+                // Функция при любом х будет равна с, это и есть и максимум и минимум
+                return c.ToString();
+            }
+            else if (a > 0)
+            {
+                // Функция параболическая, открытая вверх
+                double x = -b / (2 * a);
+                return x.ToString();
+            }
+
+            else
+            {
+                // Функция параболическая, открытая вниз, минимума не существует
+                return "Impossible";
+            }
+        }
+    }
+}
