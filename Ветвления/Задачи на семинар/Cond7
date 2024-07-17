@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cond7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var filmScore = 9.5;
+            var requiredScore = 2.0;
+            int people = 12;
+            var targetPeople = people;
+            int result = 0;
+            GetNumberVotes(filmScore * people);
+            Console.WriteLine(result.ToString());
+
+
+            void GetNumberVotes(double totalMark)
+            {
+                targetPeople += 1;
+                totalMark += 1;
+                var newMark = Math.Round(totalMark / targetPeople, 1);
+                if (newMark <= requiredScore)
+                {
+                    result = targetPeople - people;
+                    return;
+                }
+                GetNumberVotes(totalMark);
+            }
+        }
+    }
+}
