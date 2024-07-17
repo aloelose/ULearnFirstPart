@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cond3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var numberTicket = 012200;
+
+            Console.WriteLine(CheckingNeighbors(numberTicket));
+            
+        }
+        static bool CheckingNeighbors(int numberTicket)
+        {
+            return CheckingTicketHappines(numberTicket)
+                || CheckingTicketHappines(numberTicket + 1)
+                || CheckingTicketHappines(numberTicket - 1);
+        }
+        static bool CheckingTicketHappines(int number)
+        {
+            var firstNumber = number / 100000;
+            var secondNumber = number / 10000 % 10;
+            var thirdNumber = number / 1000 % 10;
+            var fourNumber = number / 100 % 10;
+            var fiveNumber = number / 10 % 10;
+            var sixNumber = number % 10;
+            return firstNumber + secondNumber + thirdNumber == fourNumber + fiveNumber + sixNumber;
+        }
+    }
+}
