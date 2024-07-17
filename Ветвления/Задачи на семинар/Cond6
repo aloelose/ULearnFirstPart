@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cond5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var pointA = "2,5";
+            var pointB = "2,3";
+            var pointC = "4,3";
+
+            Console.WriteLine(CheckSquare(pointA, pointB, pointC));
+        }
+
+        static string CheckSquare(string pointA, string pointB, string pointC)
+        {
+            var pointAX = int.Parse(pointA.Split(',')[0]);
+            var pointAY = int.Parse(pointA.Split(',')[1]);
+            var pointBX = int.Parse(pointB.Split(',')[0]);
+            var pointBY = int.Parse(pointB.Split(',')[1]);
+            var pointCX = int.Parse(pointC.Split(',')[0]);
+            var pointCY = int.Parse(pointC.Split(',')[1]);
+
+            if ((pointAX - pointBX) == (pointBY - pointCY) && 
+                ((pointBX - pointAX) * (pointCX - pointAX) + (pointBY - pointAY) * (pointCY - pointAY) == 0))
+            {
+                var x = pointAX + (pointBX - pointAX) + (pointCX - pointAX);
+                var y = pointAY + (pointBY - pointAY) + (pointCY - pointAY);
+                return $"{x},{y}";
+            }  
+            else if (pointBX - pointCX == pointCY - pointAY &&
+                ((pointAX - pointBX) * (pointCX - pointBX) + (pointAY - pointBY) * (pointCY - pointBY) == 0))
+            {
+                var x = pointBX + (pointAX - pointBX) + (pointCX - pointBX);
+                var y = pointBY + (pointAY - pointBY) + (pointCY - pointBY);
+                return $"{x},{y}";
+            }
+            else if (pointAX - pointCX == pointAY - pointBY &&
+                ((pointAX - pointCX) * (pointBX - pointCX) + (pointAY - pointCY) * (pointBY - pointCY) == 0))
+            {
+                var x = pointCX + (pointAX - pointCX) + (pointBX - pointCX);
+                var y = pointCY + (pointAY - pointCY) + (pointBY - pointCY);
+                return $"{x},{y}";
+            }
+            return "net";
+        }
+    }
+}
