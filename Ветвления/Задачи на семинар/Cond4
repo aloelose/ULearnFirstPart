@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cond4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var a = 7;
+            var b = 8;
+            var c = 3;
+            var d = 5;
+
+            Console.WriteLine(CheсkInsertion(a, b, c, d));
+        }
+        static bool CheсkInsertion(int a, int b, int c, int d)
+        {
+            return Math.Min(a, b) <= Math.Max(c, d) && Math.Max(a, b) >= Math.Min(c, d); 
+        }
+        
+    }
+}
