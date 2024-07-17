@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cond2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(CheckingMove(3, 1, 1, 1, 1));
+        }
+        static bool CheckingMove(int x, int y, int z, int a, int b)
+        {
+            if (a >= z && b >= x || a >= x && b >= z)
+                return true;
+            else if (a >= z && b >= y || a >= y && b >= z)
+                return true;
+            else if (a >= x && b >= y || a >= y && b >= x)
+                return true;
+            return false;
+              
+        }
+    }
+}
