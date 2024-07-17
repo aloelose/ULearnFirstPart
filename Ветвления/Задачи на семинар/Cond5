@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cond5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var userInput = Console.ReadLine();
+
+            var distance = double.Parse(userInput.Split(' ')[0]);
+            var deerDistance = double.Parse(userInput.Split(' ')[1]);
+            var deerTime = int.Parse(userInput.Split(' ')[2]);
+
+            Console.WriteLine(FindTravelTime(distance, deerDistance, deerTime));
+        }
+
+        static string FindTravelTime(double distance, double deerDistance, int deerTime)
+        {
+            var minTravelTime = (int)(distance / deerDistance) * deerTime;
+            int maxTravelTime;
+            if (distance % deerDistance != 0)
+                maxTravelTime = minTravelTime + deerTime;
+            else
+                maxTravelTime = minTravelTime;
+            return $"{minTravelTime} {maxTravelTime}";
+                
+        }
+    }
+}
