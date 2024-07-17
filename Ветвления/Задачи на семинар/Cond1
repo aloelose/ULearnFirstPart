@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cond1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("Введите стартовую позицию");
+                var startPosition = Console.ReadLine();
+                Console.WriteLine("Введите конечную позицию");
+                var endPosition = Console.ReadLine();
+                Console.WriteLine("Введите название фигуры");
+                var figureName = Console.ReadLine();
+
+                Console.WriteLine(CheckingMove(startPosition, endPosition, figureName));
+            }
+
+        }
+        static bool CheckingMove(string startPosition, string endPosition, string figureName)
+        {
+            var dx = Math.Abs(endPosition[0] - startPosition[0]);
+            var dy = Math.Abs(endPosition[1] - startPosition[1]);
+
+            if (figureName == "слон")
+                return dx == dy;
+            else if (figureName == "конь")
+                return dx == 2 && dy == 1 || dy == 2 && dx == 1;
+            else if (figureName == "ладья")
+                return dy == 0 || dx == 0;
+            else if (figureName == "ферзь")
+                return dx == dy || dy == 0 || dx == 0;
+            else if (figureName == "король")
+                return dx == 1 || dy == 1;
+            return false;
+        }
+    }
+}
