@@ -1,0 +1,34 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine(MiddleOf(5, 0, 100)); // => 5
+            Console.WriteLine(MiddleOf(12, 12, 11)); // => 12
+            Console.WriteLine(MiddleOf(1, 1, 1)); // => 1
+            Console.WriteLine(MiddleOf(2, 3, 2));
+            Console.WriteLine(MiddleOf(8, 8, 8));
+            Console.WriteLine(MiddleOf(5, 0, 1));
+
+            FinalTesting(); // Тестирование решения на секретных тестах
+        }
+
+        public static int MiddleOf(int a, int b, int c)
+        {
+            if ((a >= b && b > c) || (a <= b && b < c) || (a > b && b >= c) || (a < b && b <= c))
+                return b;
+            else if ((a <= c && c < b) || (a >= c && c > b) || (a < c && c <= b) || (a > c && c >= b))
+                return c;
+            else
+                return a;
+        }
+    }
+}
